@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="810.0" prefWidth="1111.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <AnchorPane layoutX="26.0" layoutY="33.0" prefHeight="492.0" prefWidth="686.0">
+         <children>
+            <ImageView fitHeight="547.0" fitWidth="773.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/Bar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="26.0" layoutY="597.0" prefHeight="184.0" prefWidth="1059.0" style="-fx-border-color: black;" />
+      <AnchorPane layoutX="750.0" layoutY="33.0" prefHeight="547.0" prefWidth="335.0" style="-fx-border-color: black;">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="150.0" text="Adicionar Cadeira" />
+            <Button layoutX="168.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="150.0" text="Adicionar Cliente" />
+            <AnchorPane layoutX="9.0" layoutY="112.0" prefHeight="212.0" prefWidth="315.0" style="-fx-border-color: black;">
+               <children>
+                  <TextArea layoutX="1.0" layoutY="-2.0" opacity="0.0" prefHeight="212.0" prefWidth="315.0" />
+               </children>
+            </AnchorPane>
+            <Text fontSmoothingType="LCD" layoutX="99.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes em casa" textAlignment="CENTER" wrappingWidth="130.92448043823242" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
