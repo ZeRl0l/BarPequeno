@@ -11,29 +11,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="805.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <AnchorPane layoutX="22.0" layoutY="14.0">
-         <children>
-            <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../imagens/Bar.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <AnchorPane layoutX="921.0" layoutY="14.0" prefHeight="549.0" prefWidth="337.0" style="-fx-border-color: black;">
          <children>
             <Text fontSmoothingType="LCD" layoutX="25.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nº Cadeiras" textAlignment="CENTER" wrappingWidth="130.92448043823242" />
-            <Button id="adicionaCadeira" fx:id="adicionaCadeira" layoutX="177.0" layoutY="80.0" mnemonicParsing="false" onAction="#addCadeira" prefHeight="32.0" prefWidth="150.0" text="Adicionar Cadeira" />
+            <Button id="adicionaCadeira" fx:id="adicionaCadeira" layoutX="177.0" layoutY="80.0" mnemonicParsing="false" onAction="#addCadeira" prefHeight="32.0" prefWidth="152.0" text="Adicionar Cadeira" textOverrun="CLIP" />
             <Text fontSmoothingType="LCD" layoutX="103.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status do Bar" textAlignment="CENTER" wrappingWidth="130.92448043823242" />
-            <TextField fx:id="cadeirasQntd" layoutX="14.0" layoutY="83.0" />
+            <TextField fx:id="cadeirasQntd" layoutX="14.0" layoutY="84.0" />
             <ScrollPane layoutX="11.0" layoutY="169.0" prefHeight="212.0" prefWidth="315.0" style="-fx-border-color: black;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="11.0">
                <content>
                   <TextArea fx:id="txtBar" editable="false" focusTraversable="false" layoutX="8.0" prefHeight="212.0" prefWidth="315.0" />
@@ -77,5 +66,97 @@
             </GridPane>
          </children>
       </AnchorPane>
+      <Pane fx:id="paneBar" layoutX="22.0" layoutY="14.0">
+         <children>
+            <ImageView fx:id="imgBar0" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/Bar.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar1" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar2" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar2.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar3" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar3.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar4" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar4.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar5" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar5.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar6" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar6.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar8" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar8.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar9" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar9.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar10" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar10.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgBar7" fitHeight="555.0" fitWidth="890.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/Bar7.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
