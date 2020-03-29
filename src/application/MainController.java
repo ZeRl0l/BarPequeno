@@ -75,9 +75,47 @@ public class MainController implements Initializable{
     @FXML
     private ImageView imgBar10;
     
+    @FXML
+    private ImageView imgCliente0;
+    
+    @FXML
+    private ImageView imgCliente1;
+    
+    @FXML
+    private ImageView imgCliente2;
+    
+    @FXML
+    private ImageView imgCliente3;
+    
+    @FXML
+    private ImageView imgCliente4;
+    
+    @FXML
+    private ImageView imgCliente5;
+    
+    @FXML
+    private ImageView imgCliente6;
+    
+    @FXML
+    private ImageView imgCliente7;
+    
+    @FXML
+    private ImageView imgCliente8;
+    
+    @FXML
+    private ImageView imgCliente9;
+    
+    @FXML
+    private ImageView imgCliente10;
+    
+    @FXML
+    private ImageView imgCliente11;
+    
     
     
     private final ImageView imgs_bar[] = new ImageView[11];
+    private final ImageView imgs_clientes[] = new ImageView[12];
+
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -92,6 +130,19 @@ public class MainController implements Initializable{
         imgs_bar[8] = imgBar8;
         imgs_bar[9] = imgBar9;
         imgs_bar[10] = imgBar10;
+        
+        imgs_clientes[0] = imgCliente0;
+        imgs_clientes[1] = imgCliente1;
+        imgs_clientes[2] = imgCliente2;
+        imgs_clientes[3] = imgCliente3;
+        imgs_clientes[4] = imgCliente4;
+        imgs_clientes[5] = imgCliente5;
+        imgs_clientes[6] = imgCliente6;
+        imgs_clientes[7] = imgCliente7;
+        imgs_clientes[8] = imgCliente8;
+        imgs_clientes[9] = imgCliente9;
+        imgs_clientes[10] = imgCliente10;
+        imgs_clientes[11] = imgCliente11;
 		
 	}
 	

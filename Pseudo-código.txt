@@ -1,0 +1,64 @@
+﻿int numCadeiras = n; // numeros de cadeiras vazias
+semaforo ocupadas = 0; // bloqueia caso cadeiras ocupadas
+semaforo mutex = 1; 
+int filaDeEspera = 0; // variavel para fazer o controle dos clientes na 
+fila,inicialmente não há fila
+int esperando = 0; // cliente esperando na fila
+int clientes = 0; // cada unidade representa um cliente sentado
+int aux = 0; // variável pra salvar alterações na fila
+
+Thread cliente:
+	while(true){
+		down(mutex);
+		
+		if (filaDeEspera == 1) 
+		{
+			esperando++; 
+			up(mutex);
+			down(ocupadas); // se tem fila de espera significa que todas tão ocupadas
+		} 
+		else 
+		{
+			clientes++;
+			
+			if(clientes == n) 
+			{
+				começaABeber();
+				
+				filaDeEspera = 1; // tem fila
+				esperando = 0; // se mesa cheia então fila tem 0
+				up(mutex)
+			}
+		}
+
+
+Thread bar: 
+	while(true){
+		down(mutex)
+		clientes--;
+		
+		vaiPraCasa();
+
+		if(clientes == 0) //clientes foram pra casa
+		{
+			if(esperando >= numCadeiras) { // mais gente esperando do que cadeiras vazias
+				aux = numCadeiras;
+			}
+			else {
+				aux = esperando;
+			}
+
+			esperando = esperando - aux; // cliente saiu da fila
+			clientes = clientes + aux; // cliente sentou 
+
+			if(clientes == n) {
+				filaDeEspera = 1;
+			}
+			else {
+				filaDeEspera = 0;
+			}
+
+			up(ocupadas, n);
+		}
+		up(mutex);
+	}

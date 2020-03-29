@@ -156,6 +156,66 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </ImageView>
+            <ImageView fx:id="imgCliente0" fitHeight="111.0" fitWidth="152.0" layoutX="14.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente1" fitHeight="111.0" fitWidth="152.0" layoutX="24.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente2" fitHeight="111.0" fitWidth="152.0" layoutX="24.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente3" fitHeight="111.0" fitWidth="152.0" layoutX="24.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente4" fitHeight="111.0" fitWidth="152.0" layoutX="34.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente5" fitHeight="111.0" fitWidth="152.0" layoutX="34.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B6.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente6" fitHeight="111.0" fitWidth="152.0" layoutX="24.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente7" fitHeight="111.0" fitWidth="152.0" layoutX="34.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B8.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente8" fitHeight="111.0" fitWidth="152.0" layoutX="34.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B9.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente9" fitHeight="111.0" fitWidth="152.0" layoutX="34.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B10.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente10" fitHeight="111.0" fitWidth="152.0" layoutX="44.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B11.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCliente11" fitHeight="111.0" fitWidth="152.0" layoutX="44.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../imagens/B12.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

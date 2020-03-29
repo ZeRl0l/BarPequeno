@@ -1,33 +1,22 @@
 package application;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import java.util.concurrent.Semaphore;
 
-public class Cliente{
+public class Cliente extends Thread {
 	
-    private final StringProperty id;
-    private final StringProperty tempoBar;
-    private final StringProperty tempoCasa;
-    
-    public Cliente() {
-        this(null, null, null);
-    }
+	private int numCadeiras; 
 	
-    public Cliente(String id, String tempoBar, String tempoCasa) {
-        this.id = new SimpleStringProperty(id);
-        this.tempoBar = new SimpleStringProperty(tempoBar);
-        this.tempoCasa = new SimpleStringProperty(tempoCasa);
-    }
-
-	public StringProperty getId() {
-		return id;
+	private Semaphore semaforo, mutex, mutex2;
+	
+	String nome;
+	int TempoBar;
+	int TempoCasa;
+	
+	public Cliente(Semaphore semaforo,Semaphore mutex,Semaphore mutex2,String nome, int tempoBar, int tempoCasa, int numCadeiras) {
+		
+		this.numCadeiras = numCadeiras;
 	}
+	
+	public void irParaCasa() {}
 
-	public StringProperty getTempoBar() {
-		return tempoBar;
-	}
-
-	public StringProperty getTempoCasa() {
-		return tempoCasa;
-	}
 }
