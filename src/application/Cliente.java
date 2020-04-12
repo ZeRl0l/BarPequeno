@@ -18,5 +18,19 @@ public class Cliente extends Thread {
 	}
 	
 	public void irParaCasa() {}
+	
+	public void Fila() {}
+	
+	public void Bebe() {}
+	
+	public void run(){
+		long t1,t2;
+		int index=0;
+		
+		while(true){
+			
+		}
+		
+	}
 
 }
