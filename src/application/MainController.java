@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class MainController implements Initializable{
+	Bar bar = new Bar();
 	
     @FXML
 	private TextField clienteNome;
@@ -149,18 +150,42 @@ public class MainController implements Initializable{
 	
 	@FXML
 	private void addCliente() {
-		String nomeCliente = clienteNome.getText();
-		int tbCliente = Integer.parseInt(clienteTb.getText());
-		int tcCliente = Integer.parseInt(clienteTc.getText());
-		
-		logFila("Cliente: " + nomeCliente + " foi adicionado com tempo no bar: " + 
-				tbCliente + " e tempo em casa: " + tcCliente);
-		
-		clienteNome.clear();
-		clienteTb.clear();
-		clienteTc.clear();
-		
-		//TODO não criar cliente caso bar esteja sem cadeiras
+		try {
+			
+			bar.qntdCliente++;
+			
+			int id = 1;
+			
+			while (bar.cliente[id] != null) {
+				id++;
+			}
+			
+			String nomeCliente = clienteNome.getText();
+			int tbCliente = Integer.parseInt(clienteTb.getText());
+			int tcCliente = Integer.parseInt(clienteTc.getText());
+			
+            if( tbCliente<=0 || tcCliente<=0 || nomeCliente.isEmpty()){
+                throw new NumberFormatException();
+            }			
+			
+			logFila("Cliente: " + nomeCliente + " foi adicionado com tempo no bar: " + 
+					tbCliente + ", tempo em casa: " + tcCliente + " e com id: " + id);
+			
+			bar.adiciona_cliente(id, nomeCliente, tbCliente, tcCliente);
+			
+            if(bar.qntdCliente == 10){
+                adicionaCliente.setDisable(true);
+            }			
+			
+			clienteNome.clear();
+			clienteTb.clear();
+			clienteTc.clear();
+			
+			//TODO não criar cliente caso bar esteja sem cadeiras
+		}
+		catch(NumberFormatException e) {
+			logFila("Valores invalidos para clientes");
+		}
 	}
 	
 	@FXML
@@ -176,6 +201,8 @@ public class MainController implements Initializable{
 	        
 	        imgs_bar[0].setVisible(false);
             imgs_bar[numCadeiras].setVisible(true);
+            
+            bar.adiciona_cadeira(numCadeiras);
             
             cadeirasQntd.setDisable(true);
             adicionaCadeira.setDisable(true);

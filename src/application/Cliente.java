@@ -4,33 +4,51 @@ import java.util.concurrent.Semaphore;
 
 public class Cliente extends Thread {
 	
-	private int numCadeiras; 
-	
-	private Semaphore semaforo, mutex, mutex2;
-	
+	int id;
 	String nome;
-	int TempoBar;
-	int TempoCasa;
+	int tbCliente;
+	int tcCliente;
+	Mesa mesa;
 	
-	public Cliente(Semaphore semaforo,Semaphore mutex,Semaphore mutex2,String nome, int tempoBar, int tempoCasa, int numCadeiras) {
-		
-		this.numCadeiras = numCadeiras;
+	private Semaphore mutex = new Semaphore(1);
+	
+	private Semaphore sem, mutex2;
+
+	public Cliente(int id, String nome, int tbCliente, int tcCliente) {
+		this.id = id;
+		this.nome = nome;
+		this.tbCliente = tbCliente;
+		this.tcCliente = tcCliente;
 	}
 	
-	public void irParaCasa() {}
+	public void run() {
+		while(true) {
+			bebedeira();
+		}
+	} 	
 	
-	public void Fila() {}
-	
-	public void Bebe() {}
-	
-	public void run(){
-		long t1,t2;
-		int index=0;
+	public void bebedeira() {
+//		long t1, t2; 
 		
-		while(true){
+		System.out.println("Start...");		
+		
+		try {
+			this.mutex.acquire();
 			
+			if(mesa.isBebendo()) {
+				System.out.println("Esperando...");
+				mutex2.acquire();
+			}
+			
+//			t1 = System.currentTimeMillis();
+//			t2 = System.currentTimeMillis();
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
 		}
 		
+		mutex2.release();
+
 	}
 
 }
