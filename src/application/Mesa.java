@@ -1,6 +1,6 @@
 package application;
 
-public class Mesa extends Thread {
+public class Mesa {
 	private int numCadeiras;
 	private int numLivres;
 	private boolean bebendo;
@@ -34,18 +34,19 @@ public class Mesa extends Thread {
 		this.numLivres = numLivres;
 	} 	
 	
-	public boolean insereCliente(int numLivres) {
+	public boolean insereCliente() {
 		if (numLivres == 0) {
 			return false;
 		}
-		else {
-			numLivres --;
+		this.numLivres--;
+		
+		if (numLivres == 0) {
 			setBebendo(true);
-			return true;
 		}
+		return true;
 	}
 	
-	public boolean removeCliente(int numLivres) {
+	public boolean removeCliente() {
 		if (numLivres == numCadeiras) {
 			return false;
 		} 

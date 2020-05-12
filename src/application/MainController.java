@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 
 public class MainController implements Initializable{
 	Bar bar = new Bar();
@@ -117,6 +116,7 @@ public class MainController implements Initializable{
     private final ImageView imgs_bar[] = new ImageView[11];
     private final ImageView imgs_clientes[] = new ImageView[12];
 
+    private Mesa mesa;
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -152,6 +152,8 @@ public class MainController implements Initializable{
 	private void addCliente() {
 		try {
 			
+			int numCadeiras = Integer.parseInt(cadeirasQntd.getText());			
+			
 			bar.qntdCliente++;
 			
 			int id = 1;
@@ -171,7 +173,7 @@ public class MainController implements Initializable{
 			logFila("Cliente: " + nomeCliente + " foi adicionado com tempo no bar: " + 
 					tbCliente + ", tempo em casa: " + tcCliente + " e com id: " + id);
 			
-			bar.adiciona_cliente(id, nomeCliente, tbCliente, tcCliente);
+			bar.adiciona_cliente(id, nomeCliente, tbCliente, tcCliente, numCadeiras, mesa, imgs_clientes);
 			
             if(bar.qntdCliente == 10){
                 adicionaCliente.setDisable(true);
@@ -202,10 +204,10 @@ public class MainController implements Initializable{
 	        imgs_bar[0].setVisible(false);
             imgs_bar[numCadeiras].setVisible(true);
             
-            bar.adiciona_cadeira(numCadeiras);
-            
             cadeirasQntd.setDisable(true);
             adicionaCadeira.setDisable(true);
+            
+            this.mesa = new Mesa(numCadeiras);
 		}
 		catch(NumberFormatException e) {
 			logBar("Valores inválidos para cadeiras.");
@@ -228,11 +230,11 @@ public class MainController implements Initializable{
         });
 	}
 	
-	private void logCasa(String string) {
-        Platform.runLater(() -> {
-            txtClienteCasa.appendText("\n["+LocalDateTime.now().getHour()+":" + LocalDateTime.now().getMinute()+":"
-                    + LocalDateTime.now().getSecond()+"] - " + string);
-        });
-	}
-	
+//	private void logCasa(String string) {
+//        Platform.runLater(() -> {
+//            txtClienteCasa.appendText("\n["+LocalDateTime.now().getHour()+":" + LocalDateTime.now().getMinute()+":"
+//                    + LocalDateTime.now().getSecond()+"] - " + string);
+//        });
+//	}
+//	
 }
