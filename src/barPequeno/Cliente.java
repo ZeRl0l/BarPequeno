@@ -18,7 +18,7 @@ public class Cliente extends Thread
 	private Mesa mesa;
 	private Tempos tempos;
 	JFrame bar;
-	int filaCoordenadas[] = {100, 170, 240, 310, 380, 450};
+	int filaCoordenadas[] = {120, 100, 80, 60, 40, 20};
 
 	String nome = "";
 
@@ -325,7 +325,7 @@ public class Cliente extends Thread
 		bar.remove(fundo);
 		sprite.setIcon(sp2);
 		flag = 1;
-		sprite.setBounds(530, 500, 100, 100);
+		sprite.setBounds(0, 500, 200, 200);
 		bar.add(sprite);
 		SwingUtilities.updateComponentTreeUI(bar);
 		bar.add(fundo);
@@ -354,7 +354,7 @@ public class Cliente extends Thread
 					e1.printStackTrace();
 				}
 
-				while (sprite.getY() > index) 
+				while (sprite.getX() < index) 
 				{
 					if (t2 - t1 > 250) 
 					{
@@ -384,7 +384,7 @@ public class Cliente extends Thread
 				}
 				sprite.setIcon(sp2);
 
-				if (fila.getIndex(this) == 0 && sprite.getY() == 100) 
+				if (fila.getIndex(this) == 0 && sprite.getX() == 120) 
 				{
 					try 
 					{
@@ -419,11 +419,11 @@ public class Cliente extends Thread
 			t1 = System.currentTimeMillis();
 			t2 = System.currentTimeMillis();
 
-			while (sprite.getY() > 15) 
+			while (sprite.getX() < 145) 
 			{
 				if (t2 - t1 > 250) 
 				{
-					sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+					sprite.setLocation(sprite.getX() + 10, sprite.getY());
 
 					switch (flag) 
 					{
