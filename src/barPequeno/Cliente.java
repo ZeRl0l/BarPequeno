@@ -10,9 +10,9 @@ import javax.swing.SwingUtilities;
 
 public class Cliente extends Thread 
 {
-//	private int id = 0;
-	private int numCadeiras, iSprite;
-//	private boolean status;
+	@SuppressWarnings("unused")
+	private int numCadeiras;
+	private int iSprite;
 	private Semaphore qnt_clientes, mutex, mutex2;
 	private Fila fila;
 	private Mesa mesa;
@@ -124,33 +124,7 @@ public class Cliente extends Thread
 			sp5 = loadImage("../imagens/sprites/B5.png","Sprite 5");
 			sp6 = loadImage("../imagens/sprites/B6.png","Sprite 5");
 			break;
-		}
-		
-//		case 0:
-//			sp1 = loadImage("../imgs/andando_na_fila/red_1.png","Sprite 1");
-//			sp2 = loadImage("../imgs/andando_na_fila/red_2.png","Sprite 2");
-//			sp3 = loadImage("../imgs/andando_na_fila/red_3.png","Sprite 3");
-//			sp4 = loadImage("../imgs/andando_na_fila/red_1_down.png","Sprite 4");
-//			sp5 = loadImage("../imgs/andando_na_fila/red_2_down.png","Sprite 5");
-//			sp6 = loadImage("../imgs/andando_na_fila/red_3_down.png","Sprite 5");
-//			break;
-//		case 1:
-//			sp1 = loadImage("../imgs/andando_na_fila/green_1.png","Sprite 1");
-//			sp2 = loadImage("../imgs/andando_na_fila/green_2.png","Sprite 2");
-//			sp3 = loadImage("../imgs/andando_na_fila/green_3.png","Sprite 3");
-//			sp4 = loadImage("../imgs/andando_na_fila/green_1_down.png","Sprite 4");
-//			sp5 = loadImage("../imgs/andando_na_fila/green_2_down.png","Sprite 5");
-//			sp6 = loadImage("../imgs/andando_na_fila/green_3_down.png","Sprite 5");
-//			break;
-//		case 2:
-//			sp1 = loadImage("../imgs/andando_na_fila/gray_1.png","Sprite 1");
-//			sp2 = loadImage("../imgs/andando_na_fila/gray_2.png","Sprite 2");
-//			sp3 = loadImage("../imgs/andando_na_fila/gray_3.png","Sprite 3");
-//			sp4 = loadImage("../imgs/andando_na_fila/gray_1_down.png","Sprite 4");
-//			sp5 = loadImage("../imgs/andando_na_fila/gray_2_down.png","Sprite 5");
-//			sp6 = loadImage("../imgs/andando_na_fila/gray_3_down.png","Sprite 5");
-//			break;
-//		}		
+		}	
 	}
 	
 /* --------------------------------------------------------------------------------------------- */
@@ -461,7 +435,7 @@ public class Cliente extends Thread
 		entrarNoPortal(1);
 
 		System.out.println(nome + " teleportando para cadeira");
-		irParaCadeira(fila.getCadeira(), numCadeiras);
+		irParaCadeira(fila.getCadeira());
 
 		darUmGole();
 		mesa.addCliente();
@@ -476,6 +450,7 @@ public class Cliente extends Thread
 		while (!checaTempoBar(t2 - t1)) 
 		{
 			darUmGole();
+			darUmGole();
 			System.out.println(nome + " está há " + segundos + " segundos bebendo.");
 			t2 = System.currentTimeMillis();
 			segundos++;
@@ -487,6 +462,7 @@ public class Cliente extends Thread
 		if (mesa.isVazia()) 
 		{
 			mutex2.release();
+			fila.setCadeira(0);
 		}
 		this.qnt_clientes.release();
 
@@ -516,337 +492,229 @@ public class Cliente extends Thread
 /* --------------------------------------------------------------------------------------------- */
 
 	//TODO
-	public void irParaCadeira(int i, int qntCadeiras) 
+	public void irParaCadeira(int i) 
 	{
-		switch (qntCadeiras) 
+		switch (i) 
 		{
-			case 3:
-				switch (i) 
+			case 0:
+				sprite.setLocation(1105, 380);
+					
+				if (iSprite == 0) 
 				{
-					case 0:
-						sprite.setLocation(160, 155);
-							
-						if (iSprite == 0) 
-						{
-							bb1 = loadImage("../imagens/sprites/B8", "Sprite 4");
-							bb2 = loadImage("../imagens/sprites/B7", "Sprite 5");
-						}
-						if (iSprite == 1) 
-						{
-							bb1 = loadImage("../imagens/sprites/B8", "Sprite 4");
-							bb2 = loadImage("../imagens/sprites/B7", "Sprite 5");
-						}
-						if (iSprite == 2) 
-						{
-							bb1 = loadImage("../imagens/sprites/B8", "Sprite 4");
-							bb2 = loadImage("../imagens/sprites/B7", "Sprite 5");
-						}
-		
-						fila.setCadeira(1);
-						break;
-
-				case 1:
-					sprite.setLocation(80, 340);
-					if (iSprite == 0) {
-						bb1 = loadImage("../imagens/sprites/B11", "Sprite 4");
-						bb2 = loadImage("../imagens/sprites/B10", "Sprite 5");
-					}
-					if (iSprite == 1) {
-						bb1 = loadImage("../imagens/sprites/B11", "Sprite 4");
-						bb2 = loadImage("../imagens/sprites/B10", "Sprite 5");
-					}
-					if (iSprite == 2) {
-						bb1 = loadImage("../imagens/sprites/B11", "Sprite 4");
-						bb2 = loadImage("../imagens/sprites/B10", "Sprite 5");
-					}
-					fila.setCadeira(2);
-					break;
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
 	
-				case 2:
-					sprite.setLocation(240, 340);
-					if (iSprite == 0) {
-						bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-						bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-					}
-					if (iSprite == 1) {
-						bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-						bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-					}
-					if (iSprite == 2) {
-						bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-						bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-					}
-					fila.setCadeira(0);
-					break;
-				}
-				break;
-
-		case 4:
-			switch (i) {
-			case 0:
-				sprite.setLocation(160, 155);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
 				fila.setCadeira(1);
 				break;
-
+				
 			case 1:
-				sprite.setLocation(50, 270);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				sprite.setLocation(1035, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
+	
 				fila.setCadeira(2);
-				break;
-
+				break;				
+			
 			case 2:
-				sprite.setLocation(260, 260);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				sprite.setLocation(960, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
+	
 				fila.setCadeira(3);
 				break;
-
+			
 			case 3:
-				sprite.setLocation(160, 375);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				sprite.setLocation(885, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				fila.setCadeira(0);
-				break;
-			}
-			break;
-
-		case 5:
-			switch (i) {
-			case 0:
-				sprite.setLocation(160, 155);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(1);
-				break;
-
-			case 1:
-				sprite.setLocation(55, 220);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(2);
-				break;
-
-			case 2:
-				sprite.setLocation(255, 210);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(3);
-				break;
-
-			case 3:
-				sprite.setLocation(80, 340);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
+	
 				fila.setCadeira(4);
 				break;
-
+			
 			case 4:
-				sprite.setLocation(235, 330);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				sprite.setLocation(810, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				fila.setCadeira(0);
-				break;
-			}
-			break;
-
-		case 6:
-			switch (i) {
-			case 0:
-				sprite.setLocation(155, 160);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(1);
-				break;
-
-			case 1:
-				sprite.setLocation(55, 225);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(2);
-				break;
-
-			case 2:
-				sprite.setLocation(255, 215);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(3);
-				break;
-
-			case 3:
-				sprite.setLocation(85, 340);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				fila.setCadeira(4);
-				break;
-
-			case 4:
-				sprite.setLocation(235, 330);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
-				}
+	
 				fila.setCadeira(5);
 				break;
-
+			
 			case 5:
-				sprite.setLocation(160, 365);
-				if (iSprite == 0) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				sprite.setLocation(740, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 1) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				if (iSprite == 2) {
-					bb1 = loadImage("../imagens/sprites/B6", "Sprite 4");
-					bb2 = loadImage("../imagens/sprites/B5", "Sprite 5");
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
 				}
-				fila.setCadeira(0);
+	
+				fila.setCadeira(6);
 				break;
-			}
-			break;
+			
+			case 6:
+				sprite.setLocation(670, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+	
+				fila.setCadeira(7);
+				break;
+			
+			case 7:
+				sprite.setLocation(600, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+	
+				fila.setCadeira(8);
+				break;
+			
+			case 8:
+				sprite.setLocation(530, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+	
+				fila.setCadeira(9);
+				break;
+			
+			case 9:
+				sprite.setLocation(460, 380);
+					
+				if (iSprite == 0) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 1) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+				if (iSprite == 2) 
+				{
+					bb1 = loadImage("../imagens/sprites/B8.png", "Sprite 4");
+					bb2 = loadImage("../imagens/sprites/B7.png", "Sprite 5");
+				}
+	
+				fila.setCadeira(10);
+				break;	
 		}
 	}
 	
