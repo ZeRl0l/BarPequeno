@@ -16,7 +16,7 @@ public class Cliente extends Thread
 	private Mesa mesa;
 	private Tempos tempos;
 	JFrame bar;
-	int filaCoordenadas[] = {200, 180, 160, 140, 120, 100, 80, 60, 40, 20};
+	int filaCoordenadas[] = {270, 240, 210, 190, 160, 130, 100, 70, 40, 10};
 
 	String nome = "";
 
@@ -60,9 +60,9 @@ public class Cliente extends Thread
 
 	public void setSprite() 
 	{
-		sp1 = loadImage("../imagens/sprites/B4.png","Sprite 1");
-		sp2 = loadImage("../imagens/sprites/B5.png","Sprite 2");
-		sp3 = loadImage("../imagens/sprites/B6.png","Sprite 3");
+		sp1 = loadImage("../imagens/sprites/B4.png","Sprite 4");
+		sp2 = loadImage("../imagens/sprites/B5.png","Sprite 5");
+		sp3 = loadImage("../imagens/sprites/B6.png","Sprite 6");
 	}
 	
 /* --------------------------------------------------------------------------------------------- */
@@ -233,7 +233,7 @@ public class Cliente extends Thread
 				}
 				sprite.setIcon(sp2);
 
-				if (fila.getIndex(this) == 0 && sprite.getX() == 200) 
+				if (fila.getIndex(this) == 0 && sprite.getX() == 270) 
 				{
 					try 
 					{
@@ -268,7 +268,7 @@ public class Cliente extends Thread
 			t1 = System.currentTimeMillis();
 			t2 = System.currentTimeMillis();
 
-			while (sprite.getX() < 225) 
+			while (sprite.getX() < 285) 
 			{
 				if (t2 - t1 > 250) 
 				{
@@ -374,8 +374,8 @@ public class Cliente extends Thread
 			case 0:
 				sprite.setLocation(1105, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 				
 				fila.setCadeira(1);
 				break;
@@ -383,8 +383,8 @@ public class Cliente extends Thread
 			case 1:
 				sprite.setLocation(1035, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(2);
 				break;				
@@ -392,8 +392,8 @@ public class Cliente extends Thread
 			case 2:
 				sprite.setLocation(960, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(3);
 				break;
@@ -401,8 +401,8 @@ public class Cliente extends Thread
 			case 3:
 				sprite.setLocation(885, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(4);
 				break;
@@ -410,8 +410,8 @@ public class Cliente extends Thread
 			case 4:
 				sprite.setLocation(810, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(5);
 				break;
@@ -419,8 +419,8 @@ public class Cliente extends Thread
 			case 5:
 				sprite.setLocation(740, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(6);
 				break;
@@ -428,8 +428,8 @@ public class Cliente extends Thread
 			case 6:
 				sprite.setLocation(670, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(7);
 				break;
@@ -437,8 +437,8 @@ public class Cliente extends Thread
 			case 7:
 				sprite.setLocation(600, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(8);
 				break;
@@ -446,8 +446,8 @@ public class Cliente extends Thread
 			case 8:
 				sprite.setLocation(530, 380);
 					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(9);
 				break;
@@ -455,8 +455,8 @@ public class Cliente extends Thread
 			case 9:
 				sprite.setLocation(460, 380);
 				
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 4");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 5");
+				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
+				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
 	
 				fila.setCadeira(10);
 				break;	
