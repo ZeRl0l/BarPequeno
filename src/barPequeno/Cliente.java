@@ -37,7 +37,7 @@ public class Cliente extends Thread
 	{
 		setSprite();
 		sprite = new JLabel(sp2);
-		sprite.setBounds(0, 500, 200, 200);
+		sprite.setBounds(0, 530, 200, 200);
 
 		this.numCadeiras = mesa.getNumCadeiras();
 		this.fila = fila;
@@ -63,6 +63,8 @@ public class Cliente extends Thread
 		sp1 = loadImage("../imagens/sprites/B4.png","Sprite 4");
 		sp2 = loadImage("../imagens/sprites/B5.png","Sprite 5");
 		sp3 = loadImage("../imagens/sprites/B6.png","Sprite 6");
+		bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 3");	
+		bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");	
 	}
 	
 /* --------------------------------------------------------------------------------------------- */
@@ -174,7 +176,7 @@ public class Cliente extends Thread
 		bar.remove(fundo);
 		sprite.setIcon(sp2);
 		flag = 1;
-		sprite.setBounds(0, 500, 200, 200);
+		sprite.setBounds(0, 530, 200, 200);
 		bar.add(sprite);
 		SwingUtilities.updateComponentTreeUI(bar);
 		bar.add(fundo);
@@ -307,9 +309,6 @@ public class Cliente extends Thread
 
 		mutex2.release();
 
-		entrarNoPortal(1);
-
-		System.out.println(nome + " teleportando para cadeira");
 		irParaCadeira(fila.getCadeira());
 
 		darUmGole();
@@ -365,100 +364,363 @@ public class Cliente extends Thread
 	}
 	
 /* --------------------------------------------------------------------------------------------- */
-	
-	//TODO
-	public void irParaCadeira(int i) 
+
+	public void irParaCadeira(int cadeira) 
 	{
-		switch (i) 
+		long t1, t2;
+		t1 = System.currentTimeMillis();
+		t2 = System.currentTimeMillis();
+		
+		switch (cadeira) 
 		{
 			case 0:
-				sprite.setLocation(1105, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-				
 				fila.setCadeira(1);
+
+				while (sprite.getX() < 1105) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(1105, 380);
+				
 				break;
 				
 			case 1:
-				sprite.setLocation(1035, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(2);
+
+				while (sprite.getX() < 1035) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(1035, 380);
+				
 				break;				
 			
 			case 2:
-				sprite.setLocation(960, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(3);
+
+				while (sprite.getX() < 960) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(960, 380);
+				
 				break;
 			
 			case 3:
-				sprite.setLocation(885, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(4);
+
+				while (sprite.getX() < 885) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(885, 380);
+				
 				break;
 			
 			case 4:
-				sprite.setLocation(810, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(5);
+
+				while (sprite.getX() < 810) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(810, 380);
+	
 				break;
 			
 			case 5:
-				sprite.setLocation(740, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(6);
+
+				while (sprite.getX() < 740) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(740, 380);
+	
 				break;
 			
 			case 6:
-				sprite.setLocation(670, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(7);
+
+				while (sprite.getX() < 670) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(670, 380);
+
 				break;
 			
 			case 7:
-				sprite.setLocation(600, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(8);
+				
+				while (sprite.getX() < 600) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}	
+				sprite.setLocation(600, 380);
+				
 				break;
 			
 			case 8:
-				sprite.setLocation(530, 380);
-					
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(9);
+
+				while (sprite.getX() < 530) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}				
+				sprite.setLocation(530, 380);
+				
 				break;
 			
 			case 9:
-				sprite.setLocation(460, 380);
-				
-				bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 1");
-				bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");
-	
 				fila.setCadeira(10);
+
+				while (sprite.getX() < 460) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() + 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp1);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp2);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp3);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				sprite.setLocation(460, 380);
+	
 				break;	
 		}
 	}
