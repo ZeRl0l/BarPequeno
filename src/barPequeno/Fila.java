@@ -6,7 +6,7 @@ import java.util.List;
 public class Fila 
 {
 	private List<Cliente> filaClientes = new LinkedList<Cliente>();
-	private int cadeira=0;//cadeira destino do cliente
+	private int cadeira = 0;//cadeira destino do cliente
 
 /* --------------------------------------------------------------------------------------------- */
 

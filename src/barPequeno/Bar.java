@@ -128,32 +128,6 @@ public class Bar
 	}
 	
 /* --------------------------------------------------------------------------------------------- */	
-
-/*!
- * @brief Faz a instancia de todos os clientes dejados no inicio do programa.
- * @return void.
- */
-//	TODO: NECESSARIO ARMAZENAR OS TEMPOS DE CADA CLIENTE EM CASA E NO BAR, ARMAZENAR ISSO EM UM TIPO 'Tempos' E DEPOIS LINKAR.
-//  TODO: ATUALMENTE O CLIENTE RECEBE DOIS TEMPOS, DESEJADO: CLIENTE JA RECEBER O TIPO 'Tempos'.
-	//private void iniciaFila(){
-	//	for(int i = 0; i <= numeroDeClientes;i++) fila.insereCliente( new Cliente(bar, i, qnt_clientes, 3000, 3000));
-	//}
-	
-//	private void proximoFila() 
-//	{
-//		try 
-//		{
-//			this.qnt_clientes.acquire();
-//		} 
-//		catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		fila.removeCliente().run();
-//		this.qnt_clientes.release();
-//	}
-	
-/* --------------------------------------------------------------------------------------------- */	
 	
 	public ImageIcon loadImageBar(int numeroDeCadeiras) 
 	{

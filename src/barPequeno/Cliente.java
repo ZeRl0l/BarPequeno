@@ -69,31 +69,37 @@ public class Cliente extends Thread
 	
 /* --------------------------------------------------------------------------------------------- */
 
-	public void darUmGole() 
+	public void tomandoUma(int quantidade) 
 	{
-		long t1, t2;
-		int i = 0;
-		t1 = System.currentTimeMillis();
-		t2 = System.currentTimeMillis();
-		while (i < 2) 
+		while (quantidade != 0)
 		{
-			if (t2 - t1 > 250) 
-			{
-				switch (flag) 
-				{
-				case 5:
-					sprite.setIcon(bb1);
-					flag = 6;
-					break;
-				case 6:
-					sprite.setIcon(bb2);
-					flag = 5;
-					break;
-				}
-				t1 = System.currentTimeMillis();
-				i++;
-			}
+			long t1, t2;
+			int i = 0;
+			flag = 5;
+			
+			t1 = System.currentTimeMillis();
 			t2 = System.currentTimeMillis();
+			while (i < 2) 
+			{
+				if (t2 - t1 > 250) 
+				{
+					switch (flag) 
+					{
+					case 5:
+						sprite.setIcon(bb1);
+						flag = 6;
+						break;
+					case 6:
+						sprite.setIcon(bb2);
+						flag = 5;
+						break;
+					}
+					t1 = System.currentTimeMillis();
+					i++;
+				}
+				t2 = System.currentTimeMillis();
+			}
+			quantidade--;
 		}
 	}
 	
@@ -311,7 +317,6 @@ public class Cliente extends Thread
 
 		irParaCadeira(fila.getCadeira());
 
-		darUmGole();
 		mesa.addCliente();
 		
 		while (!mesa.isBebendo()) {
@@ -323,8 +328,7 @@ public class Cliente extends Thread
 
 		while (!checaTempoBar(t2 - t1)) 
 		{
-			darUmGole();
-			darUmGole();
+			tomandoUma(2);
 			System.out.println(nome + " está há " + segundos + " segundos bebendo.");
 			t2 = System.currentTimeMillis();
 			segundos++;

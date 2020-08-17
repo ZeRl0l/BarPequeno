@@ -53,9 +53,6 @@ public class MainController
 	            		JOptionPane.showMessageDialog(jf_menu, "Valor inválido para cadeiras.", null, JOptionPane.ERROR_MESSAGE);
 	            		
 	            	}
-//	            	else if(numCadeiras == JOptionPane.CANCEL_OPTION){
-//	            		   System.out.println("Cancel is pressed");
-//	            	}
 	            	else 
 	            	{
                         cadeiras = numCadeiras;
