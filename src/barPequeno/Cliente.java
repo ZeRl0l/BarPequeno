@@ -27,6 +27,12 @@ public class Cliente extends Thread
 	ImageIcon sp1; // andando
 	ImageIcon sp2;
 	ImageIcon sp3;
+	ImageIcon sp4;
+	ImageIcon sp5;
+	ImageIcon sp6;
+	ImageIcon sp7;
+	ImageIcon sp8;
+	ImageIcon sp9;
 	ImageIcon bb1; // bebendo
 	ImageIcon bb2;
 	
@@ -60,11 +66,17 @@ public class Cliente extends Thread
 
 	public void setSprite() 
 	{
-		sp1 = loadImage("../imagens/sprites/B4.png","Sprite 4");
-		sp2 = loadImage("../imagens/sprites/B5.png","Sprite 5");
-		sp3 = loadImage("../imagens/sprites/B6.png","Sprite 6");
-		bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 3");	
-		bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 3");	
+		sp1 = loadImage("../imagens/sprites/B4.png","Sprite 1");
+		sp2 = loadImage("../imagens/sprites/B5.png","Sprite 2");
+		sp3 = loadImage("../imagens/sprites/B6.png","Sprite 3");
+		sp4 = loadImage("../imagens/sprites/B10.png","Sprite 4");
+		sp5 = loadImage("../imagens/sprites/B11.png","Sprite 5");
+		sp6 = loadImage("../imagens/sprites/B12.png","Sprite 6");
+		sp7 = loadImage("../imagens/sprites/B1.png","Sprite 7");
+		sp8 = loadImage("../imagens/sprites/B2.png","Sprite 8");
+		sp9 = loadImage("../imagens/sprites/B3.png","Sprite 9");
+		bb1 = loadImage("../imagens/sprites/B1.png", "Sprite 10");	
+		bb2 = loadImage("../imagens/sprites/B3.png", "Sprite 11");	
 	}
 	
 /* --------------------------------------------------------------------------------------------- */
@@ -104,16 +116,670 @@ public class Cliente extends Thread
 	}
 	
 /* --------------------------------------------------------------------------------------------- */
+	
+	public void irParaCasa(int cadeira) 
+	{
+		long t1, t2;
+		t1 = System.currentTimeMillis();
+		t2 = System.currentTimeMillis();
+		
+		flag = 1;
+		
+		switch (cadeira) 
+		{
+			case 0:
+				sprite.setLocation(1105, 535);
+				
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				break;
+				
+			case 1:
+				sprite.setLocation(1035, 535);
+				
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				break;	
+			
+			case 2:
+				sprite.setLocation(960, 535);
+				
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}				
+				break;
+			
+			case 3:
+				sprite.setLocation(885, 535);
+				
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}				
+				break;
+			
+			case 4:
+				sprite.setLocation(810, 535);
 
-	public void foiPraCasa() 
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}	
+				break;
+			
+			case 5:
+				sprite.setLocation(740, 535);
+
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}	
+				break;
+			
+			case 6:
+				sprite.setLocation(670, 535);
+
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				break;
+			
+			case 7:
+				sprite.setLocation(600, 535);
+
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}				
+				break;
+			
+			case 8:
+				sprite.setLocation(530, 535);
+
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}						
+				break;
+			
+			case 9:
+				sprite.setLocation(460, 535);
+
+				while (sprite.getX() > 385) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX() - 10, sprite.getY());
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp4);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp5);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp6);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}
+				
+				flag = 1;
+				
+				while (sprite.getY() > 365) 
+				{
+					if (t2 - t1 > 150) 
+					{
+						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
+						switch (flag) 
+						{
+							case 1:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 2:
+								sprite.setIcon(sp7);
+								flag++;
+								break;
+							case 3:
+								sprite.setIcon(sp8);
+								flag++;
+								break;
+							case 4:
+								sprite.setIcon(sp9);
+								flag = 1;
+								break;
+						}
+						t1 = System.currentTimeMillis();
+					}
+					t2 = System.currentTimeMillis();
+				}			
+				break;		
+		}
+	}
+	
+/* --------------------------------------------------------------------------------------------- */
+	
+	public void contaTempoEmCasa() 
 	{
 		long t1, t2;
 		int i = 0;
 		t1 = System.currentTimeMillis();
 		t2 = System.currentTimeMillis();
-		while (i < 20) 
+		while (i < 2) 
 		{
-			if (t2 - t1 > 50) 
+			if (t2 - t1 > 500) 
 			{
 				t1 = System.currentTimeMillis();
 				i++;
@@ -124,43 +790,7 @@ public class Cliente extends Thread
 	
 /* --------------------------------------------------------------------------------------------- */
 
-	public void entrarNoPortal(int qnt_pisca) 
-	{
-		long t1, t2;
-		int troca_cor = 2;
-
-		flag = 5;
-		t1 = System.currentTimeMillis();
-		t2 = System.currentTimeMillis();
-
-		while (troca_cor > 0) 
-		{
-			if (t2 - t1 > 400) 
-			{
-				switch (flag) 
-				{
-					case 5:
-						flag = 6;
-						break;
-					case 6:
-						flag = 5;
-						break;
-				}
-				t1 = System.currentTimeMillis();
-				troca_cor--;
-			}
-			t2 = System.currentTimeMillis();
-		}
-		qnt_pisca--;
-
-		if (qnt_pisca > 0) {
-			entrarNoPortal(qnt_pisca);
-		}
-	}
-	
-/* --------------------------------------------------------------------------------------------- */
-
-	public void irParaCasa() 
+	public void emCasa() 
 	{
 		long t1, t2;
 		int ressaca = 1;
@@ -171,7 +801,7 @@ public class Cliente extends Thread
 		t2 = System.currentTimeMillis();
 		while (!checaTempoCasa(t2 - t1)) 
 		{
-			foiPraCasa();
+			contaTempoEmCasa();
 			System.out.println(nome + " ja está a " + ressaca + " segundos de ressaca.");
 			ressaca++;
 			t2 = System.currentTimeMillis();
@@ -344,9 +974,9 @@ public class Cliente extends Thread
 		}
 		this.qnt_clientes.release();
 
-		entrarNoPortal(1);
+		irParaCasa(fila.getCadeira());
 
-		irParaCasa();
+		emCasa();
 	}
 	
 /* --------------------------------------------------------------------------------------------- */

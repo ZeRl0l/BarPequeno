@@ -31,22 +31,18 @@ public class Bar
 	
 	public Bar(int numeroDeCadeiras) 
 	{
-//		Random gerador = new Random();
-		
 		this.mesa = new Mesa(numeroDeCadeiras);
 		this.qnt_clientes = new Semaphore(numeroDeCadeiras);
 		this.mutex = new Semaphore(1);
 		this.mutex2 = new Semaphore(1);
 		this.fila = new Fila();
 		
-		//this.id = gerador.nextInt(21);
-		
 		im_bar = loadImageBar(numeroDeCadeiras);
-		im_add = loadImage("../imgs/locais/add_default.png", "Adicionar Cliente");
+		im_add = loadImage("../imagens/add_default.png", "Adicionar Cliente");
 		lb_bar = new JLabel(im_bar);
 		bt_add = new JButton(im_add);
 		lb_bar.setBounds(0, 0, 1280, 768);
-		bt_add.setBounds(50, 10, 60, 60);
+		bt_add.setBounds(1170, 10, 60, 60);
 		bt_add.setBackground(new Color(0, 0, 0, 0));
 		bt_add.setBorder(null);
 		bt_add.setFocusable(false);
@@ -93,8 +89,8 @@ public class Bar
             			mutex.acquire();
             			fila.insereCliente(aux);
             			mutex.release();
-            			System.out.println(tb + " " + tc);
-            			System.out.println("Cliente inserido ID: "+ aux.getId() + " Nome: " +aux.getNome());
+            			System.out.println("Tempo Bar: " + tb + " Tempo Casa: " + tc);
+            			System.out.println("Cliente inserido ID: "+ aux.getId() + " Nome: " + aux.getNome());
             			aux.start();
                     }
                     catch(Exception er) 
@@ -110,10 +106,10 @@ public class Bar
             	
             }
             public void mouseEntered(MouseEvent e) {
-                bt_add.setIcon(loadImage("../imgs/locais/add_entered.png", "Adicionar Cliente"));
+                bt_add.setIcon(loadImage("../imagens/add_entered.png", "Adicionar Cliente"));
             }
             public void mouseExited(MouseEvent e) {
-            	bt_add.setIcon(loadImage("../imgs/locais/add_default.png", "Adicionar Cliente"));
+            	bt_add.setIcon(loadImage("../imagens/add_default.png", "Adicionar Cliente"));
             }
         });
 		
