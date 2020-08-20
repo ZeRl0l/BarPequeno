@@ -9,22 +9,7 @@ import javax.swing.SwingUtilities;
 
 public class Cliente extends Thread 
 {
-	@SuppressWarnings("unused")
-	private int numCadeiras;
-	private Semaphore qnt_clientes, mutex, mutex2;
-	private Fila fila;
-	private Mesa mesa;
-	private Tempos tempos;
-	JFrame bar;
-	int filaCoordenadas[] = {270, 240, 210, 190, 160, 130, 100, 70, 40, 10};
-
-	String nome = "";
-
-	JLabel fundo;
-	JLabel sprite;
-	int flag = 1;
-
-	ImageIcon sp1; // andando
+	ImageIcon sp1;
 	ImageIcon sp2;
 	ImageIcon sp3;
 	ImageIcon sp4;
@@ -33,9 +18,29 @@ public class Cliente extends Thread
 	ImageIcon sp7;
 	ImageIcon sp8;
 	ImageIcon sp9;
-	ImageIcon bb1; // bebendo
+	
+	ImageIcon bb1;
 	ImageIcon bb2;
 	
+	
+	@SuppressWarnings("unused")
+	private int numCadeiras;
+	
+	private Semaphore qnt_clientes, mutex, mutex2;
+	
+	private Fila fila;
+	private Mesa mesa;
+	private Tempos tempos;
+	JFrame bar;
+	
+	int posicaoFila[] = {270, 240, 210, 190, 160, 130, 100, 70, 40, 10};
+
+	String nome = "";
+
+	JLabel fundo;
+	JLabel sprite;
+	int flag = 1;
+
 /* --------------------------------------------------------------------------------------------- */	
 
 	public Cliente(JFrame bar, JLabel fundo, Semaphore qnt_clientes, Semaphore mutex, Semaphore mutex2, Fila fila,
@@ -834,7 +839,7 @@ public class Cliente extends Thread
 				try 
 				{
 					mutex.acquire();
-					index = filaCoordenadas[fila.getIndex(this)];
+					index = posicaoFila[fila.getIndex(this)];
 					mutex.release();
 				} 
 				catch (InterruptedException e1) {
