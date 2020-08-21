@@ -1,5 +1,6 @@
 package barPequeno;
 
+import java.awt.Color;
 import java.util.concurrent.Semaphore;
 
 import javax.swing.ImageIcon;
@@ -48,6 +49,9 @@ public class Cliente extends Thread
 	{
 		setSprite();
 		sprite = new JLabel(sp2);
+		sprite.setText(nome);
+		sprite.setForeground(Color.white);
+		sprite.setHorizontalTextPosition(JLabel.CENTER);
 		sprite.setBounds(0, 530, 200, 200);
 
 		this.numCadeiras = mesa.getNumCadeiras();
@@ -137,7 +141,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -168,7 +172,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -201,7 +205,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -232,7 +236,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -265,7 +269,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -296,7 +300,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -329,7 +333,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -360,7 +364,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -393,7 +397,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -424,7 +428,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -457,7 +461,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -488,7 +492,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -521,7 +525,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -552,7 +556,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -585,7 +589,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -616,7 +620,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -649,7 +653,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -680,7 +684,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -713,7 +717,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() > 385) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() - 10, sprite.getY());
 						switch (flag) 
@@ -744,7 +748,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getY() > 365) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX(), sprite.getY() - 10);
 						switch (flag) 
@@ -848,7 +852,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < index) 
 				{
-					if (t2 - t1 > 250) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -913,7 +917,7 @@ public class Cliente extends Thread
 
 			while (sprite.getX() < 285) 
 			{
-				if (t2 - t1 > 250) 
+				if (t2 - t1 > 50) 
 				{
 					sprite.setLocation(sprite.getX() + 10, sprite.getY());
 
@@ -948,9 +952,9 @@ public class Cliente extends Thread
 			e.printStackTrace();
 		}
 
-		mutex2.release();
-
 		irParaCadeira(fila.getCadeira());
+		
+		mutex2.release();
 
 		mesa.addCliente();
 		
@@ -1017,7 +1021,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 1105) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1052,7 +1056,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 1035) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1087,7 +1091,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 960) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1122,7 +1126,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 885) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1157,7 +1161,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 810) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1192,7 +1196,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 740) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1227,7 +1231,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 670) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1262,7 +1266,7 @@ public class Cliente extends Thread
 				
 				while (sprite.getX() < 600) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1297,7 +1301,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 530) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
@@ -1332,7 +1336,7 @@ public class Cliente extends Thread
 
 				while (sprite.getX() < 460) 
 				{
-					if (t2 - t1 > 150) 
+					if (t2 - t1 > 50) 
 					{
 						sprite.setLocation(sprite.getX() + 10, sprite.getY());
 						switch (flag) 
